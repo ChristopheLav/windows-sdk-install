@@ -1,0 +1,24 @@
+name: Test
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Build and Checks"]
+    types: 
+      - completed
+
+jobs:
+  test:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.workflow_run.head_branch }}
+
+      - name: Install the Windows SDK 22621
+        uses: ./
+        with:
+          version-sdk: 22621
+          features: 'OptionId.UWPCPP, OptionId.DesktopCPPx64, OptionId.DesktopCPPx86, OptionId.DesktopCPParm64, OptionId.DesktopCPParm'
