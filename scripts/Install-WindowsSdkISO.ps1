@@ -18,7 +18,7 @@ if (-not $IsWindows) {
 
 # Generate the features array
 $WindowsSDKOptions = $features -split ',' -replace '^\s+|\s+$' | ForEach-Object { "$_" }
-if ($WindowsSDKOptions.Length <= 0) {
+if ($WindowsSDKOptions.Length -le 0) {
     Write-Host "ERROR: you need to specify one or more features to install!"
     Write-Host
     Exit 1
