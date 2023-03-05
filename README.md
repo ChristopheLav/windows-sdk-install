@@ -17,7 +17,7 @@ Refer [here](CHANGELOG.md) to the changelog.
 | Input | Required | Example | Default Value | Description |
 |-|-|-|-|-|
 | `version-sdk`          | Yes | 22621  | | Version of the Windows SDK to install |
-| `features`          | Yes | "OptionId.UWPCPP,OptionId.DesktopCPParm64"  | | Features of the Windows SDK to install (corresponding of the `WinSDKSetup.exe /features` switch) separated by a comma |
+| `features`          | Yes | 'OptionId.UWPCPP,OptionId.DesktopCPParm64'  | | Features of the Windows SDK to install (corresponding of the `WinSDKSetup.exe /features` switch) separated by a comma |
 
 The available features of the Windows 10/11 SDK are:
 - OptionId.WindowsPerformanceToolkit
@@ -43,7 +43,7 @@ The available features of the Windows 10/11 SDK are:
 - uses: ChristopheLav/windows-sdk-install@v1
   with:
     version-sdk: 22621
-    features: "OptionId.UWPCPP,OptionId.DesktopCPParm64"
+    features: 'OptionId.UWPCPP,OptionId.DesktopCPParm64'
 ```
 <!-- end usage -->
 

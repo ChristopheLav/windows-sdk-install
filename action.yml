@@ -15,7 +15,7 @@ runs:
       run: >
         ${{ github.action_path }}/scripts/Install-WindowsSdkISO.ps1
         ${{ inputs.version-sdk }}
-        ${{ inputs.features }}
+        "${{ inputs.features }}"
 branding:
   icon: settings
   color: gray-dark
