@@ -1,0 +1,21 @@
+name: 'Windows SDK Install'
+description: 'Allows to install locally the Windows SDK if needed'
+inputs:
+  version-sdk:
+    description: "Target version of the Windows SDK"
+    required: true
+  features:
+    description: "Features of the Windows SDK to install separated by a comma"
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - name: Setup the Windows SDK ${{ inputs.version-sdk }}
+      shell: pwsh
+      run: >
+        ${{ github.action_path }}/scripts/Install-WindowsSdkISO.ps1
+        ${{ inputs.version-sdk }}
+        ${{ inputs.features }}
+branding:
+  icon: settings
+  color: gray-dark
