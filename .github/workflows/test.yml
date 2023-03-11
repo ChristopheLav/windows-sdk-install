@@ -29,8 +29,8 @@ jobs:
           version-sdk: 18995
           features: "OptionId.UWPCPP, OptionId.DesktopCPPx64"
 
-      - name: Install the Windows SDK 17763 (stable, installation needed)
+      - name: Install the Windows SDK 18362 (stable, installation needed)
         uses: ./
         with:
-          version-sdk: 17763
+          version-sdk: 18362
           features: "OptionId.UWPCPP, OptionId.DesktopCPPx64"
