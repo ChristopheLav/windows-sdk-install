@@ -10,12 +10,6 @@ param(
 # Ensure the error action preference is set to the default for PowerShell3, 'Stop'
 $ErrorActionPreference = 'Stop'
 
-if (-not $IsWindows) {
-    Write-Host "ERROR: this action is only compatible with Windows!"
-    Write-Host
-    Exit 1
-}
-
 # Generate the features array
 $WindowsSDKOptions = $features -split ',' -replace '^\s+|\s+$' | ForEach-Object { "$_" }
 if ($WindowsSDKOptions.Length -le 0) {
@@ -292,7 +286,23 @@ if ($InstallWindowsSDK)
 {
     # Static(ish) link for Windows SDK
     # Note: there is a delay from Windows SDK announcements to availability via the static link
-    $uri = "https://software-download.microsoft.com/download/sg/Windows_InsiderPreview_SDK_en-us_$($buildNumber)_1.iso";
+    # Note: stable version of the SDK have dedicated links (https://developer.microsoft.com/en-us/windows/downloads/sdk-archive/)
+    switch ($buildNumber)
+    {
+        10240 { throw "The Windows SDK $buildNumber is not available in ISO format. Can't be installed." }
+        10586 { throw "The Windows SDK $buildNumber is not available in ISO format. Can't be installed." }
+        14393 { throw "The Windows SDK $buildNumber is not available in ISO format. Can't be installed." }
+        15063 { throw "The Windows SDK $buildNumber is not available in ISO format. Can't be installed." }
+        16299 { throw "The Windows SDK $buildNumber is not available in ISO format. Can't be installed." }
+        17134 { throw "The Windows SDK $buildNumber is not available in ISO format. Can't be installed." }
+        17763 { $uri = "https://software-download.microsoft.com/download/sg/17763.132.181022-1834.rs5_release_svc_prod1_WindowsSDK.iso" }
+        18362 { $uri = "https://software-download.microsoft.com/download/sg/18362.1.190318-1202.19h1_release_WindowsSDK.iso" }
+        19041 { $uri = "https://software-download.microsoft.com/download/sg/19041.685.201201-2105.vb_release_svc_prod1_WindowsSDK.iso" }
+        20348 { $uri = "https://software-download.microsoft.com/download/sg/20348.1.210507-1500.fe_release_WindowsSDK.iso" }
+        22000 { $uri = "https://software-static.download.prss.microsoft.com/dbazure/888969d5-f34g-4e03-ac9d-1f9786c66750/22000.832.220715-1440.co_release_svc_prod3_WindowsSDK.iso" }
+        22621 { $uri = "https://software-static.download.prss.microsoft.com/dbazure/988969d5-f34g-4e03-ac9d-1f9786c66756/22621.755.221019-1136.ni_release_svc_prod3_WindowsSDK.iso" }
+        default { $uri = "https://software-download.microsoft.com/download/sg/Windows_InsiderPreview_SDK_en-us_$($buildNumber)_1.iso" }
+    }
 
     if ($env:TEMP -eq $null)
     {
