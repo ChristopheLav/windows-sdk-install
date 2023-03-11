@@ -10,14 +10,6 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Ensure Windows runner type
-      shell: pwsh
-      run: >
-        if (-not $IsWindows) {
-            Write-Host "ERROR: this action is only compatible with Windows!"
-            Write-Host
-            Exit 1
-        }
     - name: Setup the Windows SDK ${{ inputs.version-sdk }}
       shell: pwsh
       run: >

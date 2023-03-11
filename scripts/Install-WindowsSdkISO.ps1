@@ -10,6 +10,12 @@ param(
 # Ensure the error action preference is set to the default for PowerShell3, 'Stop'
 $ErrorActionPreference = 'Stop'
 
+if (-not $IsWindows) {
+    Write-Host "ERROR: this action is only compatible with Windows!"
+    Write-Host
+    Exit 1
+}
+
 # Generate the features array
 $WindowsSDKOptions = $features -split ',' -replace '^\s+|\s+$' | ForEach-Object { "$_" }
 if ($WindowsSDKOptions.Length -le 0) {
