@@ -8,28 +8,46 @@ on:
       - 'imgs\*'
 
 jobs:
-  test:
+  test-no-install:
     runs-on: windows-latest
-
+    name: No Install Needed
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         with:
           ref: ${{ github.event.workflow_run.head_branch }}
 
-      - name: Install the Windows SDK 22621 (no installation needed)
+      - name: Install the Windows SDK 22621
         uses: ./
         with:
           version-sdk: 22621
           features: "OptionId.UWPCPP, OptionId.DesktopCPPx64, OptionId.DesktopCPPx86, OptionId.DesktopCPParm64, OptionId.DesktopCPParm"
 
-      - name: Install the Windows SDK 18995 (Insider, installation needed)
+  test-insider-install:
+    runs-on: windows-latest
+    name: Insider Install Needed
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.workflow_run.head_branch }}
+
+      - name: Install the Windows SDK 18995
         uses: ./
         with:
           version-sdk: 18995
           features: "OptionId.UWPCPP, OptionId.DesktopCPPx64"
+  
+  test-stable-install:
+    runs-on: windows-latest
+    name: Stable Install Needed
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.workflow_run.head_branch }}
 
-      - name: Install the Windows SDK 18362 (stable, installation needed)
+      - name: Install the Windows SDK 18362
         uses: ./
         with:
           version-sdk: 18362
