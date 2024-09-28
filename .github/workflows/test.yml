@@ -17,7 +17,7 @@ jobs:
         with:
           ref: ${{ github.event.workflow_run.head_branch }}
 
-      - name: Install the Windows SDK 26100
+      - name: Install the Windows SDK 22621
         uses: ./
         with:
           version-sdk: 22621
