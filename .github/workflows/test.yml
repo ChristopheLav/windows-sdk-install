@@ -17,10 +17,10 @@ jobs:
         with:
           ref: ${{ github.event.workflow_run.head_branch }}
 
-      - name: Install the Windows SDK 22621
+      - name: Install the Windows SDK 26100
         uses: ./
         with:
-          version-sdk: 22621
+          version-sdk: 26100
           features: "OptionId.UWPCPP, OptionId.DesktopCPPx64, OptionId.DesktopCPPx86, OptionId.DesktopCPParm64, OptionId.DesktopCPParm"
 
   test-insider-install:
