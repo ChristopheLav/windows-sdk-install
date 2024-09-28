@@ -42,7 +42,7 @@ The available features of the Windows 10/11 SDK are:
 ```yaml
 - uses: ChristopheLav/windows-sdk-install@v1
   with:
-    version-sdk: 22621
+    version-sdk: 26100
     features: 'OptionId.UWPCPP,OptionId.DesktopCPParm64'
 ```
 <!-- end usage -->

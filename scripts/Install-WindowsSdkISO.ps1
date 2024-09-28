@@ -301,12 +301,13 @@ if ($InstallWindowsSDK)
         15063 { throw "The Windows SDK $buildNumber is not available in ISO format. Can't be installed." }
         16299 { throw "The Windows SDK $buildNumber is not available in ISO format. Can't be installed." }
         17134 { throw "The Windows SDK $buildNumber is not available in ISO format. Can't be installed." }
-        17763 { $uri = "https://software-download.microsoft.com/download/sg/17763.132.181022-1834.rs5_release_svc_prod1_WindowsSDK.iso" }
-        18362 { $uri = "https://software-download.microsoft.com/download/sg/18362.1.190318-1202.19h1_release_WindowsSDK.iso" }
-        19041 { $uri = "https://software-download.microsoft.com/download/sg/19041.685.201201-2105.vb_release_svc_prod1_WindowsSDK.iso" }
-        20348 { $uri = "https://software-download.microsoft.com/download/sg/20348.1.210507-1500.fe_release_WindowsSDK.iso" }
-        22000 { $uri = "https://software-static.download.prss.microsoft.com/dbazure/888969d5-f34g-4e03-ac9d-1f9786c66750/22000.832.220715-1440.co_release_svc_prod3_WindowsSDK.iso" }
-        22621 { $uri = "https://software-static.download.prss.microsoft.com/dbazure/988969d5-f34g-4e03-ac9d-1f9786c66756/22621.755.221019-1136.ni_release_svc_prod3_WindowsSDK.iso" }
+        17763 { $uri = "https://go.microsoft.com/fwlink/p/?LinkID=2033686" }
+        18362 { $uri = "https://go.microsoft.com/fwlink/?linkid=2083448" }
+        19041 { $uri = "https://go.microsoft.com/fwlink/?linkid=2120735" }
+        20348 { $uri = "https://go.microsoft.com/fwlink/?linkid=2164360" }
+        22000 { $uri = "https://go.microsoft.com/fwlink/?linkid=2173746" }
+        22621 { $uri = "https://go.microsoft.com/fwlink/?linkid=2249825" }
+        26100 { $uri = "https://go.microsoft.com/fwlink/?linkid=2286663" }
         default { $uri = "https://software-download.microsoft.com/download/sg/Windows_InsiderPreview_SDK_en-us_$($buildNumber)_1.iso" }
     }
 
