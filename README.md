@@ -33,7 +33,7 @@ The available features of the Windows 10/11 SDK are:
 - OptionId.UWPLocalized
 - OptionId.DesktopCPPx86
 - OptionId.DesktopCPPx64
-- OptionId.DesktopCPParm
+- OptionId.DesktopCPParm **(no more exists in SDK 26100 and beyound)**
 - OptionId.DesktopCPParm64
 
 ## Usage

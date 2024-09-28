@@ -353,8 +353,15 @@ if ($InstallWindowsSDK)
             Write-Host -NoNewLine "Installing WinSDK..."
 
             $setupPath = Join-Path "$isoDrive" "WinSDKSetup.exe"
-            Start-Process -Wait $setupPath "/features $WindowsSDKOptions /q"
+            $setupLog = Join-Path $winsdkTempDir "WinSDKSetup_$buildNumber.log"
+            Start-Process -Wait $setupPath "/features $WindowsSDKOptions /l $setupLog /q"
             Write-Host "Done"
+
+            # Validate if the SDK was properly installed
+            if (Test-InstallWindowsSDK)
+            {
+                throw "Windows SDK $WindowsSDKVersion was not properly installed. See $setupLog for details."
+            }
         }
         else
         {
