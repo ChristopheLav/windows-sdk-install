@@ -307,7 +307,7 @@ if ($InstallWindowsSDK)
         20348 { $uri = "https://go.microsoft.com/fwlink/?linkid=2164360" }
         22000 { $uri = "https://go.microsoft.com/fwlink/?linkid=2173746" }
         22621 { $uri = "https://go.microsoft.com/fwlink/?linkid=2312900" }
-        26100 { $uri = "https://go.microsoft.com/fwlink/?linkid=233566" }
+        26100 { $uri = "https://go.microsoft.com/fwlink/?linkid=2332023" }
         default { $uri = "https://software-download.microsoft.com/download/sg/Windows_InsiderPreview_SDK_en-us_$($buildNumber)_1.iso" }
     }
 

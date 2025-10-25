@@ -4,7 +4,7 @@
 
 - Updated Windows SDK 19041 download link to 10.0.19041.5609 (April 2025)
 - Updated Windows SDK 22621 download link to 10.0.22621.5040 (April 2025)
-- Updated Windows SDK 26100 download link to 10.0.26100.4948 (September 2025)
+- Updated Windows SDK 26100 download link to 10.0.26100.4948 (August 2025)
 
 ## v1.0.3
 
