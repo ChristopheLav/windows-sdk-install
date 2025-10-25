@@ -303,11 +303,11 @@ if ($InstallWindowsSDK)
         17134 { throw "The Windows SDK $buildNumber is not available in ISO format. Can't be installed." }
         17763 { $uri = "https://go.microsoft.com/fwlink/p/?LinkID=2033686" }
         18362 { $uri = "https://go.microsoft.com/fwlink/?linkid=2083448" }
-        19041 { $uri = "https://go.microsoft.com/fwlink/?linkid=2120735" }
+        19041 { $uri = "https://go.microsoft.com/fwlink/?linkid=2312004" }
         20348 { $uri = "https://go.microsoft.com/fwlink/?linkid=2164360" }
         22000 { $uri = "https://go.microsoft.com/fwlink/?linkid=2173746" }
-        22621 { $uri = "https://go.microsoft.com/fwlink/?linkid=2249825" }
-        26100 { $uri = "https://go.microsoft.com/fwlink/?linkid=2286663" }
+        22621 { $uri = "https://go.microsoft.com/fwlink/?linkid=2312900" }
+        26100 { $uri = "https://go.microsoft.com/fwlink/?linkid=2332023" }
         default { $uri = "https://software-download.microsoft.com/download/sg/Windows_InsiderPreview_SDK_en-us_$($buildNumber)_1.iso" }
     }
 
