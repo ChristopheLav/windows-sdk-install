@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.0.5
+
+- Added support of Windows SDK 28000 stable
+- Updated Windows SDK 26100 download link to 10.0.26100.7705 (February 2026)
+
 ## v1.0.4
 
 - Updated Windows SDK 19041 download link to 10.0.19041.5609 (April 2025)
